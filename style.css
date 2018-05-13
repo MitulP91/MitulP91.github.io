@@ -1,0 +1,203 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.Nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: #fff;
+  z-index: 4;
+}
+
+/******************/
+/* General Styles */
+/******************/
+.Panel {
+  position: relative;
+  width: 50%;
+}
+
+.Panel h2 {
+  color: #ffffff;
+  font-family: "Kanit", sans-serif;
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.Panel .second-line-header {
+  margin-top: -48px;
+}
+
+.Panel p {
+  font-size: 1.5rem;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+.YellowPanel {
+  background-color: #ffd20c;
+}
+
+.BluePanel {
+  background-color: #5bbeff;
+}
+
+.ImagePanel {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.FlexPanel {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.padded {
+  padding: 1rem;
+}
+
+.is-hidden {
+  display: none;
+}
+
+/***************************/
+/* Specific Section Styles */
+/***************************/
+.MovieTitle {
+  color: #ffffff;
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+  font-size: 6rem;
+  font-size: 6.5vw;
+  margin: 0;
+}
+
+.MovieTitlePanel {
+  overflow: hidden;
+}
+
+#FakeDonateButton {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: #ffd20c;
+  font-family: "Kanit", sans-serif;
+  color: #fff;
+}
+
+.SvgContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.SvgContainer svg {
+  position: relative;
+  top: 15%;
+  height: 70%;
+}
+
+.TruckPath-2 {
+  fill: #35befe;
+}
+
+.TruckPath-3 {
+  fill: #a4e1fe;
+}
+
+.PersonList {
+  text-align: center;
+}
+
+.Person {
+  width: 33%;
+  padding: 1rem;
+  float: left;
+  color: #fff;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.PersonName {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin: 0;
+  margin-top: 2rem;
+}
+
+.PersonRole {
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+}
+
+.Panel .PersonDescription {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+/*****************/
+/* Media Queries */
+/*****************/
+@media (max-width: 1060px) {
+  .MovieTitle {
+    font-size: 8rem;
+    font-size: 12vw;
+  }
+
+  .Panel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .SvgContainer svg {
+    top: 20%;
+    height: 60%;
+  }
+
+  .full-height {
+    height: 95%;
+  }
+}
