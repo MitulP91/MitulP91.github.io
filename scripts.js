@@ -1,59 +1,97 @@
 ///////////////////////
 // Paypal Submission //
 ///////////////////////
-var fakeDonateButton = document.getElementById('FakeDonateButton');
 var donateButton = document.getElementById('DonateButton');
-fakeDonateButton.addEventListener('click', function () {
-  donateButton.click();
-});
+var fakeDonateButtons = document.getElementsByClassName('FakeDonateButton');
+for (var i = 0; i < fakeDonateButtons.length; i++) {
+  fakeDonateButtons[i].addEventListener('click', function () {
+    donateButton.click();
+  });
+}
 
 //////////////////////
 // Budget Pie Chart //
 //////////////////////
+function addCommas(x) {
+  var parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return parts.join(".");
+};
+
 window.onload = function () {
-  var chartContext = document.getElementById('BudgetGraph').getContext('2d');
+  var chartContext = document.getElementById('BudgetPanelCanvas');
   var chartData = {
     datasets: [
       {
         data: [
-          10,
-          20,
-          30,
-          40,
+          '368',
+          '1325',
+          '1400',
+          '1325',
+          '3619',
+          '1236',
+          '2650',
+          '1000',
+          '800',
+          '1000',
+          '1472',
         ],
         backgroundColor: [
           'red',
           'green',
           'blue',
           'yellow',
+          'orange',
+          'brown',
+          'black',
+          'pink',
+          'purple',
+          'greenyellow',
+          'olive',
         ],
-        label: 'Budget',
       }
+    ],
+    labels: [
+      'Production',
+      'Camera, Grip & Electric',
+      'Sound',
+      'Production Design, Makeup, & Wardrobe',
+      'Locations',
+      'Transportation & Travel',
+      'Food & Lodging',
+      'Music',
+      'Color Correction',
+      'Legal & Distribution',
+      'Contingency',
     ],
   };
 
   var chartOptions = {
     responsive: true,
-  };
-
-  var myPieChart = new Chart(chartContext, {
-    type: 'pie',
-    data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-      datasets: [{
-        label: "Population (millions)",
-        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-        data: [2478, 5267, 734, 784, 433]
-      }]
+    legend: {
+      display: window.width > 950,
+      position: 'left',
     },
-    options: {
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
+    tooltips: {
+      callbacks: {
+        label: function (tooltipItem, data) {
+          var datasetIndex = tooltipItem.datasetIndex;
+          var dataIndex = tooltipItem.index;
+
+          var label = data.labels[dataIndex];
+          var value = data.datasets[datasetIndex].data[dataIndex];
+
+          return label + ": $" + addCommas(value) + ".00";
+        }
       }
     }
+  };
+
+  var budgetChart = new Chart(chartContext, {
+    type: 'pie',
+    data: chartData,
+    options: chartOptions,
   });
-  console.log(myPieChart);
 }
 
 //////////

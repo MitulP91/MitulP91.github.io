@@ -4,6 +4,7 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 #root {
@@ -17,26 +18,27 @@ html {
   box-sizing: border-box;
 }
 
-.Nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 1rem;
-  text-align: center;
-  background-color: #fff;
-  z-index: 4;
-}
 
 /******************/
 /* General Styles */
 /******************/
-.Panel {
-  position: relative;
-  width: 50%;
+.Nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  text-align: center;
+  z-index: 4;
+  border: 2px solid #fff;
 }
 
-.Panel h2 {
-  color: #ffffff;
+.Panel {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+}
+
+.PanelHeader h2 {
+  color: #000000;
   font-family: "Kanit", sans-serif;
   font-size: 4rem;
   font-style: italic;
@@ -49,11 +51,23 @@ html {
   margin-top: -48px;
 }
 
-.Panel p {
+.PanelContent p {
   font-size: 1.5rem;
   font-family: "Karla", sans-serif;
   font-weight: 400;
-  color: white;
+  color: #000000;
+  max-width: 800px;
+  margin: 1rem auto;
+  text-align: left;
+  padding: 0 2rem;
+}
+
+.PanelContent {
+  margin: 2rem 0;
+}
+
+.PanelButtonContainer {
+  margin: 1rem 0;
 }
 
 .YellowPanel {
@@ -84,7 +98,7 @@ html {
 }
 
 .full-height {
-  height: 100%;
+  height: 95%;
 }
 
 .padded {
@@ -93,6 +107,10 @@ html {
 
 .is-hidden {
   display: none;
+}
+
+.centered {
+  text-align: center;
 }
 
 /***************************/
@@ -113,12 +131,20 @@ html {
   overflow: hidden;
 }
 
-#FakeDonateButton {
+.FakeDonateButton {
+  background-color: transparent;
+  border: 1px solid #000;
+  color: #000;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  background-color: #ffd20c;
   font-family: "Kanit", sans-serif;
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
+}
+
+.FakeDonateButton--yellow {
+  background-color: #ffd20c;
   color: #fff;
+  border-color: #ffd20c;
 }
 
 .SvgContainer {
@@ -133,8 +159,37 @@ html {
 
 .SvgContainer svg {
   position: relative;
-  top: 15%;
-  height: 70%;
+}
+
+.SvgContainer .RecordSvg {
+  top: 20%;
+  height: 60%;
+}
+
+.SvgContainer .TruckSvg {
+  height: 100%;
+}
+
+.IceCreamTruckPanel {
+  height: 15%;
+}
+
+.IceCreamTruckPanel .FakeButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.IceCreamTruckPanel .FakeDonateButton {
+  border: 2px solid #fff;
+  border-radius: 2px;
+  font-size: 2rem;
+}
+
+.IceCreamTruckPanel .FakeDonateButton:hover,
+.IceCreamTruckPanel .FakeDonateButton:active,
+.IceCreamTruckPanel .FakeDonateButton:focus {
+  color: #5bbeff;
+  border: 2px solid #5bbeff;
 }
 
 .TruckPath-2 {
@@ -145,18 +200,54 @@ html {
   fill: #a4e1fe;
 }
 
+.TruckSvgContainer {
+  width: 50%;
+}
+
+.InnerTruckSvgContainer {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.TotalRaisedContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  width: 50%;
+}
+
+.TotalRaisedContainer h3,
+.TotalRaisedContainer h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.TotalRaised {
+  font-size: 3rem;
+}
+
+.TotalRaisedGoal {
+  font-size: 2rem;
+}
+
 .PersonList {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .Person {
-  width: 33%;
   padding: 1rem;
-  float: left;
-  color: #fff;
+  color: #000;
   font-family: "Karla", sans-serif;
   font-weight: 700;
   font-size: 1rem;
+  width: 33%;
+  min-width: 320px;
 }
 
 .PersonName {
@@ -175,6 +266,17 @@ html {
   font-size: 1rem;
   margin: 0;
   padding: 0.5rem;
+  text-align: center;
+}
+
+.BudgetPanelGraph {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.PongPanel {
+  padding: 0;
 }
 
 /*****************/
@@ -191,13 +293,21 @@ html {
   }
 }
 
+@media (max-width: 990px) {
+  .Person {
+    width: 50%;
+  }
+}
+
+@media (max-width: 550px) {
+  .Panel h2 {
+    font-size: 2.75rem;
+  }
+}
+
 @media (max-width: 650px) {
-  .SvgContainer svg {
+  .SvgContainer .RecordSvg {
     top: 20%;
     height: 60%;
-  }
-
-  .full-height {
-    height: 95%;
   }
 }
