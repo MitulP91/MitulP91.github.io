@@ -18,6 +18,19 @@ html {
   box-sizing: border-box;
 }
 
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
 /* Record SVG CSS */
 .cls-1{fill:#fdfdfd}.cls-7{font-family:Arimo-Bold,Arimo;font-weight:700}.cls-4{letter-spacing:-.04em}.cls-5{letter-spacing:-.02em}.cls-6{letter-spacing:-.07em}.cls-7{font-size:8px}
 
@@ -189,6 +202,18 @@ html {
 .SvgContainer .RecordSvg {
   top: 20%;
   height: 60%;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 7500ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 7500ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 7500ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
 }
 
 .SvgContainer .TruckSvg {
