@@ -47,6 +47,24 @@ html {
   text-transform: uppercase;
 }
 
+.BluePanel .PanelHeader h2,
+.BluePanel .PanelContent h3,
+.BluePanel .PanelContent h4,
+.BluePanel .PanelContent p,
+.BluePanel .PanelButtonContainer .FakeDonateButton,
+.YellowPanel .PanelHeader h2,
+.YellowPanel .PanelContent h3,
+.YellowPanel .PanelContent h4,
+.YellowPanel .PanelContent p,
+.YellowPanel .PanelButtonContainer .FakeDonateButton {
+  color: #fff;
+}
+
+.BluePanel .PanelButtonContainer .FakeDonateButton,
+.YellowPanel .PanelButtonContainer .FakeDonateButton {
+  border-color: #fff;
+}
+
 .Panel .second-line-header {
   margin-top: -48px;
 }
