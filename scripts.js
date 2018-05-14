@@ -56,7 +56,7 @@ window.onload = function () {
       'Camera, Grip & Electric',
       'Sound',
       'Production Design, Makeup, & Wardrobe',
-      'Locations',
+      'Ice Cream Truck',
       'Transportation & Travel',
       'Food & Lodging',
       'Music',
