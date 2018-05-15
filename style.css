@@ -380,15 +380,26 @@ html {
   }
 }
 
-@media (max-width: 550px) {
-  .Panel h2 {
-    font-size: 2.75rem;
-  }
-}
-
 @media (max-width: 650px) {
   .SvgContainer .RecordSvg {
     top: 20%;
     height: 60%;
+  }
+}
+
+@media (max-width: 550px) {
+  .Panel h2 {
+    font-size: 2.75rem;
+  }
+  
+  .PanelContent p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 490px) {
+  .SvgContainer .RecordSvg {
+    height: 50%;
+    top: 25%;
   }
 }
