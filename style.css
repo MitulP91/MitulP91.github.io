@@ -401,6 +401,13 @@ html {
   }
 }
 
+@media (max-width: 800px) {
+  .PongPanel {
+    display: none;
+  }
+}
+
+
 @media (max-width: 650px) {
   .SvgContainer .RecordSvg {
     top: 20%;
@@ -410,7 +417,7 @@ html {
   .TruckSvg, .TotalRaisedContainer {
     margin-top: -40px;
   }
-
+  
   .TotalRaised {
     font-size: 2rem;
   }

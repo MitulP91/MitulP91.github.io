@@ -9,6 +9,8 @@ for (var i = 0; i < fakeDonateButtons.length; i++) {
   });
 }
 
+var windowWidth = window.width;
+
 //////////////////////
 // Budget Pie Chart //
 //////////////////////
@@ -69,7 +71,7 @@ window.onload = function () {
   var chartOptions = {
     responsive: true,
     legend: {
-      display: window.width > 950,
+      display: windowWidth > 950,
       position: 'left',
     },
     tooltips: {
