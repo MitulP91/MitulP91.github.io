@@ -52,8 +52,8 @@ window.onload = function () {
           'black',
           'pink',
           'purple',
-          'greenyellow',
-          'olive',
+          'gray',
+          'tomato',
         ],
       }
     ],
