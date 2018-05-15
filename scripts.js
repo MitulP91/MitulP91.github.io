@@ -1,3 +1,9 @@
+var windowWidth = window.width;
+
+function isTouchDevice() {
+  return 'ontouchstart' in document.documentElement;
+}
+
 ///////////////////////
 // Paypal Submission //
 ///////////////////////
@@ -8,8 +14,6 @@ for (var i = 0; i < fakeDonateButtons.length; i++) {
     donateButton.click();
   });
 }
-
-var windowWidth = window.width;
 
 //////////////////////
 // Budget Pie Chart //
@@ -184,7 +188,7 @@ function gameStart() {
   text("1\nPlayer\n(W,S)", width / 3, height / 3);
   text("2\nPlayers\n(UP,DOWN)", 2 * width / 3, height / 3);
   fill(255);
-  text("Choose a mode to play", width / 2, 2 * height / 3);
+  text("Choose a mode to play (Keyboard Only)", width / 2, 2 * height / 3);
 }
 
 function gameEnd() {
