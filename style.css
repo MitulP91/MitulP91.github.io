@@ -275,8 +275,8 @@ html {
   fill: #a4e1fe;
 }
 
-.TruckSvgContainer {
-  width: 50%;
+.TruckSvg {
+  width: 60%;
 }
 
 .InnerTruckSvgContainer {
@@ -292,7 +292,10 @@ html {
   font-family: 'Kanit', sans-serif;
   font-weight: 800;
   font-style: italic;
-  width: 50%;
+}
+
+.TruckSvg, .TotalRaisedContainer {
+  margin-top: -70px;
 }
 
 .TotalRaisedContainer h3,
@@ -303,6 +306,14 @@ html {
 
 .TotalRaised {
   font-size: 3rem;
+}
+
+.Divider {
+  margin: 0 2rem;
+}
+
+.Divider .TotalRaisedGoal {
+  color: #ffd20c !important;
 }
 
 .TotalRaisedGoal {
@@ -369,6 +380,10 @@ html {
     font-size: 12vw;
   }
 
+  .TruckSvg {
+    width: 75%;
+  }
+
   .Panel {
     width: 100%;
   }
@@ -380,10 +395,28 @@ html {
   }
 }
 
+@media (max-width: 850px) {
+  .TruckSvg {
+    width: 100%;
+  }
+}
+
 @media (max-width: 650px) {
   .SvgContainer .RecordSvg {
     top: 20%;
     height: 60%;
+  }
+
+  .TruckSvg, .TotalRaisedContainer {
+    margin-top: -40px;
+  }
+
+  .TotalRaised {
+    font-size: 2rem;
+  }
+
+  .TotalRaisedGoal {
+    font-size: 1rem;
   }
 }
 
